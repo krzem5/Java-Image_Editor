@@ -1,0 +1,4 @@
+### Github File Push Ignore
+
+**/*.class
+alpha_mask.png
