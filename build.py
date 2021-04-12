@@ -19,9 +19,10 @@ cd=os.getcwd()
 os.chdir("src")
 jfl=[]
 for r,_,fl in os.walk("."):
+	r=r.replace("\\","/").strip("/")+"/"
 	for f in fl:
 		if (f[-5:]==".java"):
-			jfl.append(os.path.join(r,f))
+			jfl.append(r+f)
 if (subprocess.run(["javac","-d","../build"]+jfl).returncode!=0):
 	sys.exit(1)
 os.chdir(cd)
