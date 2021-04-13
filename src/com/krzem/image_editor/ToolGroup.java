@@ -63,14 +63,12 @@ public class ToolGroup extends Constants{
 
 	public void update(){
 		if (this.active==true){
-			boolean c=false;
 			for (int i=0;i<this.tl.size();i++){
 				Rectangle r=this._get_rect(this._get_full_rect(this.RECT),i);
 				if (this.cls.MOUSE_POS.x>=r.x&&this.cls.MOUSE_POS.x<=r.x+r.w&&this.cls.MOUSE_POS.y>=r.y&&this.cls.MOUSE_POS.y<=r.y+r.h){
 					this.tl.get(i).s=Math.min(this.tl.get(i).s+TOOLBAR_ELEM_SIZE_INC,TOOLBAR_HOVER_ELEM_SIZE);
 					if (this.cls.MOUSE==3&&this.cls.MOUSE_COUNT==1&&this.cls.MOUSE_BUTTON==1){
 						this.tl.get(i)._click();
-						c=true;
 					}
 				}
 				else{
@@ -95,7 +93,6 @@ public class ToolGroup extends Constants{
 						if (i>=this.tl.size()){
 							break;
 						}
-						int n=KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null);
 						if (this.cls.KEYBOARD.pressed(KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null))){
 							this.tl.get(i)._click();
 							break;
@@ -148,7 +145,7 @@ public class ToolGroup extends Constants{
 	private void _load(){
 		try{
 			String s=this._run_method("TOOL_NAMES").invoke(this.t_obj).toString();
-			for (String tn:s.toString().split(",")){
+			for (String tn:s.split(",")){
 				for (Tool t:this.tb.tools){
 					if (t.t_obj.getClass().getName().substring(0,t.t_obj.getClass().getName().lastIndexOf("Tool")).toLowerCase().equals(tn.toLowerCase())){
 						this.tl.add(t);

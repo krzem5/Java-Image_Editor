@@ -1,22 +1,13 @@
-import com.krzem.image_editor.*;
+import com.krzem.image_editor.Constants;
+import com.krzem.image_editor.Rectangle;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 
 
 
 public class ShapeToolGroup extends Constants{
-	public Main cls;
-
-
-
 	public static final String TOOL_NAMES(){
 		return "rectoutline,rect,circleoutline,circle";
-	}
-
-
-
-	public ShapeToolGroup(Main cls){
-		this.cls=cls;
 	}
 
 

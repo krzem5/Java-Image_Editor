@@ -52,6 +52,7 @@ public class ColorPickerGUI extends GUI{
 
 
 
+	@Override
 	public void draw(Graphics2D g){
 		this._draw(g);
 		Rectangle r=this._get_frame_rect();
@@ -184,6 +185,7 @@ public class ColorPickerGUI extends GUI{
 
 
 
+	@Override
 	public void update(){
 		if (this.cls.KEYBOARD.pressed(27)){
 			this.close_gui();
@@ -201,15 +203,15 @@ public class ColorPickerGUI extends GUI{
 			int a=COL.getAlpha();
 			if (this.drag==0){
 				Rectangle cr=this._get_color_rect();
-				if (this.drag==0&&this.cls.MOUSE_POS.x>=cr.x&&this.cls.MOUSE_POS.x<=cr.x+cr.w&&this.cls.MOUSE_POS.y>=cr.y&&this.cls.MOUSE_POS.y<=cr.y+cr.h){
+				if (this.cls.MOUSE_POS.x>=cr.x&&this.cls.MOUSE_POS.x<=cr.x+cr.w&&this.cls.MOUSE_POS.y>=cr.y&&this.cls.MOUSE_POS.y<=cr.y+cr.h){
 					this.drag=1;
 				}
 				Rectangle sr=this._get_slider_rect();
-				if (this.drag==0&&this.cls.MOUSE_POS.x>=sr.x&&this.cls.MOUSE_POS.x<=sr.x+sr.w&&this.cls.MOUSE_POS.y>=sr.y&&this.cls.MOUSE_POS.y<=sr.y+sr.h){
+				if (this.cls.MOUSE_POS.x>=sr.x&&this.cls.MOUSE_POS.x<=sr.x+sr.w&&this.cls.MOUSE_POS.y>=sr.y&&this.cls.MOUSE_POS.y<=sr.y+sr.h){
 					this.drag=2;
 				}
 				Rectangle asr=this._get_alpha_slider_rect();
-				if (this.drag==0&&this.cls.MOUSE_POS.x>=asr.x&&this.cls.MOUSE_POS.x<=asr.x+asr.w&&this.cls.MOUSE_POS.y>=asr.y&&this.cls.MOUSE_POS.y<=asr.y+asr.h){
+				if (this.cls.MOUSE_POS.x>=asr.x&&this.cls.MOUSE_POS.x<=asr.x+asr.w&&this.cls.MOUSE_POS.y>=asr.y&&this.cls.MOUSE_POS.y<=asr.y+asr.h){
 					this.drag=3;
 				}
 			}
@@ -380,7 +382,7 @@ public class ColorPickerGUI extends GUI{
 				}
 			}
 			catch (Exception e){
-				System.out.println("Unable to Paste: "+s);
+				System.out.println("Unable to Paste: "+cs);
 			}
 		}
 		catch (Exception e){

@@ -35,4 +35,4 @@ with zipfile.ZipFile("build/image_editor.jar","w") as zf:
 				print(f"Writing: {os.path.join(r,f)[6:].replace(chr(92),'/')}")
 				zf.write(os.path.join(r,f),os.path.join(r,f)[6:])
 if ("--run" in sys.argv):
-	subprocess.run(["java","-jar","build/image_editor.jar"])
+	subprocess.run(["java","-jar","build/image_editor.jar","img.png"])

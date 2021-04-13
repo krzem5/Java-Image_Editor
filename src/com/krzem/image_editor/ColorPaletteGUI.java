@@ -35,6 +35,7 @@ public class ColorPaletteGUI extends GUI{
 
 
 
+	@Override
 	public void draw(Graphics2D g){
 		this._draw(g);
 		Rectangle r=this._get_frame_rect();
@@ -73,7 +74,7 @@ public class ColorPaletteGUI extends GUI{
 		if (this.mc!=null){
 			x=0;
 			y=0;
-			for (Color c:this.cp.cl){
+			for (int i=0;i<this.cp.cl.size();i++){
 				Rectangle er=new Rectangle(r.x+x*(COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2)-COLOR_PALETTE_GUI_ELEM_BORDER_SIZE-COLOR_PALETTE_GUI_ELEM_SIZE/2,r.y+y*(COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2)+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE,COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2,COLOR_PALETTE_GUI_ELEM_SIZE);
 				if (this.cls.MOUSE_POS.x>=er.x&&this.cls.MOUSE_POS.x<=er.x+er.w&&this.cls.MOUSE_POS.y>=er.y&&this.cls.MOUSE_POS.y<=er.y+er.h){
 					g.setColor(COLOR_PALETTE_GUI_ELEM_INSERT_RECT_COLOR);
@@ -118,6 +119,7 @@ public class ColorPaletteGUI extends GUI{
 
 
 
+	@Override
 	public void update(){
 		if (this.GUI!=null){
 			this.GUI.update();
@@ -174,9 +176,9 @@ public class ColorPaletteGUI extends GUI{
 				if (this.cls.MOUSE==0){
 					int x=0;
 					int y=0;
-					int i=0;
 					boolean f=false;
-					for (Color c:this.cp.cl){
+					int i=0;
+					for (;i<this.cp.cl.size();i++){
 						Rectangle er=new Rectangle(r.x+x*(COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2)-COLOR_PALETTE_GUI_ELEM_BORDER_SIZE-COLOR_PALETTE_GUI_ELEM_SIZE/2,r.y+y*(COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2)+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE,COLOR_PALETTE_GUI_ELEM_SIZE+COLOR_PALETTE_GUI_ELEM_BORDER_SIZE*2,COLOR_PALETTE_GUI_ELEM_SIZE);
 						if (this.cls.MOUSE_POS.x>=er.x&&this.cls.MOUSE_POS.x<=er.x+er.w&&this.cls.MOUSE_POS.y>=er.y&&this.cls.MOUSE_POS.y<=er.y+er.h){
 							f=true;
@@ -187,7 +189,6 @@ public class ColorPaletteGUI extends GUI{
 							x=0;
 							y++;
 						}
-						i++;
 					}
 					if (f==true){
 						this.cp.cl=this._move(this.cp.cl,this.mci,i);

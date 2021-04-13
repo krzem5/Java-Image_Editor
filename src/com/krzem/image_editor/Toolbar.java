@@ -89,7 +89,6 @@ public class Toolbar extends Constants{
 					if (i>=this.tool_g.size()){
 						break;
 					}
-					int n=KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null);
 					if (this.cls.KEYBOARD.pressed(KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null))){
 						this.tool_g.get(i)._click();
 						break;

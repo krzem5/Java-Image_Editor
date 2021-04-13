@@ -44,6 +44,7 @@ public class ToolClassLoader extends ClassLoader{
 		catch (IOException e){
 			e.printStackTrace();
 		}
+		inpS.close();
 		return bS.toByteArray();
 	}
 

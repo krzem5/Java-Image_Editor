@@ -64,7 +64,6 @@ public class ColorPalette extends Constants{
 					if (i>=this.cl.size()){
 						break;
 					}
-					int n=KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null);
 					if (this.cls.KEYBOARD.pressed(KeyEvent.class.getField("VK_"+Character.toString(sl.charAt(i))).getInt(null))){
 						if (this.cls.KEYBOARD.pressed(KeyEvent.class.getField("VK_"+COLOR_PALETTE_FG_KEY.toUpperCase()).getInt(null))){
 							this.i.tb.set_fg(this.cl.get(i));

@@ -18,7 +18,7 @@ public class Constants{
 	public static final Color BG_COLOR=new Color(230,230,230);
 
 	public static final double IMAGE_ZOOM_INCREMENT=0.5;
-	public static final double IMAGE_PAN_INCREMENT=5;
+	public static final int IMAGE_PAN_INCREMENT=5;
 	public static final double IMAGE_DEFAULT_SCREEN_SIZE_PROC=0.5;
 	public static final double IMAGE_MAX_GRID_SIZE_PROC=0.025;
 	public static final double IMAGE_MIN_GRID_SIZE_PROC=0.01;
