@@ -262,10 +262,12 @@ public class ColorPickerGUI extends GUI{
 	}
 
 
+
 	private Rectangle _get_alpha_slider_rect(){
 		Rectangle r=this._get_frame_rect();
 		return new Rectangle(r.x+COLOR_PICKER_GUI_ALPHA_SLIDER_FRAME.x,r.y+COLOR_PICKER_GUI_ALPHA_SLIDER_FRAME.y,COLOR_PICKER_GUI_ALPHA_SLIDER_FRAME.width,COLOR_PICKER_GUI_ALPHA_SLIDER_FRAME.height);
 	}
+
 
 
 	private Rectangle _get_preview_rect(){
